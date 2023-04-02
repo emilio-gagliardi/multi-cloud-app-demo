@@ -24,4 +24,11 @@ format:
 	black *.py
 
 test:
+	#python -m pytest -vv test_application.py
 	python -m pytest -vv --cov=hello test_hello.py
+	
+deploy:
+	echo "Deploying app"
+	eb deploy multi-cloud-app-demo
+	
+all: install lint test
