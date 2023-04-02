@@ -10,7 +10,12 @@ phases:
       - source ~/.venv/bin/activate
       - make install
       - make lint
+      - make test
 
   build:
     commands:
       - make deploy
+  
+  post_build:
+    commands:
+      - echo Build completed on `date`
